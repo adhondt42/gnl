@@ -12,6 +12,10 @@ int main(int argc, char **argv)
 	while (get_next_line(fd, &line) > 0)
 	{
 		printf("%s\n", line);
+//		free(line);
 	}
+	close(fd);
+	while (1)
+		 ;
 	return (0);
 }
