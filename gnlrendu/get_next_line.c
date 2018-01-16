@@ -1,5 +1,4 @@
-#include "get_next_line.h"
-#include <stdio.h>
+#include "../get_next_line.h"
 
 char	*ft_keepstr(char *str, char *instr)
 {
@@ -84,72 +83,4 @@ int		get_next_line(const int fd, char **line)
 	}
 	return (0);
 }
-/*
-int main(int argc, char **argv)
-{
-	char *line;
-	int ret;
-	int fd;
 
-	(void)argc;
-	fd = open(argv[1], O_RDONLY);
-	while (get_next_line(fd, &line) > 0)
-	{
-		printf("%s\n", line);
-	}
-	while (1)
-		;
-	return (0);
-}*/;
-	
-	/*int		main(int argc, char *argv[])
-  {
-  int ret;
-  int fd;
-  char *line;
-
-  fd = open(argv[1], O_RDONLY);
-
-//	ft_putstr("1 appel \n");
-//ret = get_next_line(fd, &line);
-//ft_putstr("2 appel \n");
-//ret = get_next_line(fd, &line);
-//ft_putstr("3 appel \n");
-ret = get_next_line(fd, &line);
-ft_putstr("result: ");
-ft_putstr(line);
-ft_putchar('\n');
-ft_putstr("ret: ");
-ft_putnbr(ret);
-
-ft_putchar('\n');
-ft_putstr("-----\n");
-
-ret = get_next_line(fd, &line);
-ft_putstr("result: ");
-ft_putstr(line);
-ft_putchar('\n');
-ft_putstr("ret: ");
-ft_putnbr(ret);
-
-ft_putchar('\n');
-ft_putstr("-----\n");
-
-ret = get_next_line(fd, &line);
-ft_putstr("result: ");
-ft_putstr(line);
-ft_putchar('\n');
-ft_putstr("ret: ");
-ft_putnbr(ret);
-
-ft_putchar('\n');
-ft_putstr("-----\n");
-
-ret = get_next_line(fd, &line);
-ft_putstr("result: ");
-ft_putstr(line);
-ft_putchar('\n');
-ft_putstr("ret: ");
-ft_putnbr(ret);
-return (0);
-}*/
