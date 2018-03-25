@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next.h                                         :+:      :+:    :+:   */
+/*   ft_initializetab.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adhondt <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 13:51:51 by adhondt           #+#    #+#             */
-/*   Updated: 2018/03/22 13:56:50 by adhondt          ###   ########.fr       */
+/*   Created: 2018/03/05 16:27:52 by adhondt           #+#    #+#             */
+/*   Updated: 2018/03/07 20:01:10 by adhondt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "libft/libft.h"
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <fcntl.h>
-# define BUFF_SIZE 9999
+#include "libft.h"
 
-int get_next_line(const int fd, char **line);
+char		**ft_initializetab(int size)
+{
+	char	**tab;
 
-#endif
+	if (size < 0)
+	{
+		ft_putstr("\n-- Error ft_initializetab, size < 0 --\n");
+		return (NULL);
+	}
+	tab = (char **)malloc(sizeof(char *) * size);
+	while (size > 0)
+		tab[--size] = NULL;
+	return (tab);
+}

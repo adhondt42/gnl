@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next.h                                         :+:      :+:    :+:   */
+/*   ft_sorttab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adhondt <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 13:51:51 by adhondt           #+#    #+#             */
-/*   Updated: 2018/03/22 13:56:50 by adhondt          ###   ########.fr       */
+/*   Created: 2018/03/07 21:08:56 by adhondt           #+#    #+#             */
+/*   Updated: 2018/03/22 15:04:42 by adhondt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "libft/libft.h"
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <fcntl.h>
-# define BUFF_SIZE 9999
+#include "libft.h"
+#include <stdio.h>
 
-int get_next_line(const int fd, char **line);
+void	ft_sorttab(char **tab)
+{
+	int		h;
+	int		i;
+	int		j;
+	char	*tmp;
 
-#endif
+	i = ft_tablen(tab);
+	h = i;
+	j = 0;
+	while (h-- > 0)
+	{
+		j = 0;
+		while (i > j && tab[j + 1] != NULL)
+		{
+			if (ft_strcmp(tab[j], tab[j + 1]) > 0)
+			{
+				tmp = tab[j + 1];
+				tab[j + 1] = tab[j];
+				tab[j] = tmp;
+			}
+			j++;
+		}
+	}
+}

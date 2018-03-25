@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next.h                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adhondt <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 13:51:51 by adhondt           #+#    #+#             */
-/*   Updated: 2018/03/22 13:56:50 by adhondt          ###   ########.fr       */
+/*   Created: 2017/11/08 09:26:35 by adhondt           #+#    #+#             */
+/*   Updated: 2018/03/22 15:05:40 by adhondt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "libft/libft.h"
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <fcntl.h>
-# define BUFF_SIZE 9999
+#include "libft.h"
 
-int get_next_line(const int fd, char **line);
+char	*ft_strcdup(const char *tab, char c)
+{
+	char	*str;
+	int		i;
 
-#endif
+	i = 0;
+	while (tab[i] != c && tab[i])
+		i++;
+	str = (char *)malloc(sizeof(char) * (i + 2));
+	str[i] = '\0';
+	i--;
+	while (i >= 0)
+	{
+		str[i] = tab[i];
+		i--;
+	}
+	return (str);
+}

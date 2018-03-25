@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next.h                                         :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adhondt <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 13:51:51 by adhondt           #+#    #+#             */
-/*   Updated: 2018/03/22 13:56:50 by adhondt          ###   ########.fr       */
+/*   Created: 2017/11/13 17:53:51 by adhondt           #+#    #+#             */
+/*   Updated: 2017/11/24 01:56:45 by adhondt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "libft/libft.h"
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <fcntl.h>
-# define BUFF_SIZE 9999
+#include "libft.h"
 
-int get_next_line(const int fd, char **line);
+char	*ft_strstr(const char *string, const char *pik)
+{
+	int		i;
+	int		j;
 
-#endif
+	i = 0;
+	if (pik[i] == '\0')
+		return ((char *)string);
+	while (string[i])
+	{
+		j = 0;
+		while (string[i + j] == pik[j] && string[i + j])
+		{
+			if (pik[j + 1] == '\0')
+				return ((char *)(string + i));
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}

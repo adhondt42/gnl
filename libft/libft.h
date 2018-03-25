@@ -6,7 +6,7 @@
 /*   By: adhondt <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 12:51:25 by adhondt           #+#    #+#             */
-/*   Updated: 2017/12/20 10:59:33 by adhondt          ###   ########.fr       */
+/*   Updated: 2018/03/22 15:11:55 by adhondt          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+void			ft_sorttab(char **tab);
+char			**ft_initializetab(int size);
+char			*ft_strrchrrev(char *s, char c);
+size_t			ft_tablen(char **src);
+char			**ft_tabtabdup(char **tab, int itt, int it);
+char			*ft_strnewc(size_t size, char c);
+int				onlyins(char *s1, char *s2);
+void			ft_n();
+char			*ft_itoa_base(int value, int base);
 char			*ft_strndup(const char *tab, int n);
 char			*ft_strnjoin(char const *s1, char const *s2, int n);
 int				get_next_line(const int fd, char **line);
@@ -49,6 +58,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin_free(char const *s1, char const *s2, int j);
 char			*ft_itoa(int n);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putendl_fd(char const *s, int fd);
